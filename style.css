@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(204, 206, 207);
+}
+.wrapper{
+   
+   
+    height: 50px;
+    width: 30px;
+    background: #fff;
+}
+/*===============Sign up form ==================*/
+
+header{
+    font-size: 35px;
+    font-weight: 600;
+}
