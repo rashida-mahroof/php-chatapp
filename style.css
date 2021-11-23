@@ -100,6 +100,10 @@ form .name_details .field:last-child{
     top: 70%;
     transform: translateY(-50%);
 }
+.form form .field i.active::before{
+    content: "\f070";
+    color: #333;
+}
 .form .link a{
     color: #333;
 }
@@ -214,6 +218,8 @@ form .name_details .field:last-child{
 
 
 /*=================== chat area ======================*/
+
+
 .chat-area header{
     display: flex;
     align-items: center;
