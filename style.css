@@ -10,18 +10,204 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(204, 206, 207);
+    background-color: rgb(233, 234, 235);
 }
 .wrapper{
-   
-   
-    height: 50px;
-    width: 30px;
+    width: 450px;
+    border-radius: 16px;
     background: #fff;
+    box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+                0 32px 64px -48px rgba(0,0,0,0.5);
 }
 /*===============Sign up form ==================*/
 
-header{
+.form header{
     font-size: 35px;
     font-weight: 600;
+    border-bottom: 1px solid rgb(138, 137, 137);
+    padding-bottom: 10px;
+}
+.form{
+    padding: 25px 30px;
+}
+.form form{
+    margin: 20px 0;
+}
+.form form .error-text{
+    color: rgb(29, 26, 26);
+    background: rgb(250, 172, 172);
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid;
+}
+.form form .name_details{
+    display: flex;
+}
+form .name_details .field:first-child{
+    margin-right: 10px;
+}
+form .name_details .field:last-child{
+    margin-left: 10px;
+}
+.form form .field{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.form form .field input{
+    outline: none;
+}
+.form form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+}
+.form form .field label{
+    margin-bottom: 2px;
+}
+.form form .image input{
+    font-size: 17px;
+}
+.form form .button input{
+    margin-top: 13px;
+    height: 45px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+.form form .button input:hover{
+    background: #000;   
+}
+.form .link {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px ;
+}
+.form form .field i{
+    position: absolute;
+    right: 15px;
+    color: rgb(119, 116, 116);
+    cursor: pointer;
+    top: 70%;
+    transform: translateY(-50%);
+}
+.form .link a{
+    color: #333;
+}
+.form .link a:hover{
+    text-decoration: underline;
+}
+
+
+/*=================== users.html=======================*/
+
+.users{
+    padding: 25px 30px;
+}
+.users header,
+.users-list a{
+    display: flex;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid #e6e6e6;
+}
+.wrapper img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+.users header .content img{
+    height: 50px;
+    width: 50px;
+}
+:is(.users, .users-list) .content{
+    display: flex;
+    align-items: center;
+}
+:is(.users, .users-list) .details{
+    margin-left: 15px;
+    color: #000;
+}
+:is(.users, .users-list) .details span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.users header .logout{
+    color: #fff;
+    padding: 7px 15px;
+    background: #333;
+    font-size: 17px;
+    border-radius: 5px;
+}
+.users .search{
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.users .search input{
+    position: absolute;
+    width: calc(100% - 50px);
+    height: 42px;
+    border: 1px solid #e6e6e6;
+    padding: 0 13px;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+.users .search button{
+   height: 42px;
+   width: 47px;
+   border: none;
+   position: absolute;
+   outline: none;
+   color: #fff;
+   right: 0;
+   background: #333;
+   border-radius: 0 5px 5px 0;
+   cursor: pointer;
+   font-size: 17px
+}
+.users-list{
+    max-height: 350px;
+    overflow: auto;
+}
+.users-list::-webkit-scrollbar{
+    width: 0px;
+}
+.users-list a{
+    padding-right: 15px;
+    margin-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom-color: #f1f1f1;
+}
+.users-list a:last-child{
+    border: none;
+    margin-bottom: 0px;
+}
+.users-list a .content img{
+   
+    height: 40px;
+    width: 40px;
+}
+.users-list a .content p{
+    color: #67676a;
+}
+.users-list a .status-dot{
+    font-size: 12px;
+    color: #468669;
+}
+/*use this class in php to show offline users*/
+.users-list a .status-dot.offline{
+    color: #ccc;
 }
