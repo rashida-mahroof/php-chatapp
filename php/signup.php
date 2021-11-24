@@ -42,11 +42,14 @@ session_start();
 
                             if($sql2){      //if these data inserted
                                 $sql3 = mysqli_query($conn,"SELECT * FROM user WHERE email = '{$email}'");
-                                if(mysqli_num_rows($sql3 > 0)){
-                                    $row = mysqli_fetch_assoc($sql3);
-                                    $_SESSION['unique_id'] = $row['unique_id'];      //using this session we used user unique id in other php files
+                                 
+                                if(mysqli_num_rows($sql3) > 0){
+                                    $result = mysqli_fetch_assoc($sql3);
+                                    $_SESSION['unique_id'] = $result['unique_id'];
                                     echo "success";
-                                }                                
+                                }else{
+                                    echo "This email address not Exist!";
+                                }                                 
                             }else{
                                 echo "Something went wrong!";
                             }
