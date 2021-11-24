@@ -1,9 +1,10 @@
 <?php
+session_start();
     include_once "config.php";
     $fname = mysqli_real_escape_string($conn,$_POST['fname']);
     $lname = mysqli_real_escape_string($conn,$_POST['lname']);
     $email = mysqli_real_escape_string($conn,$_POST['email']);
-    $password = mysqli_real_escape_string($conn,$_POST['image']);
+    $password = mysqli_real_escape_string($conn,$_POST['password']);
 
     if(!empty($fname) && !empty($lname) && !empty($email) && !empty($password) ){
         //check user emil is valid or not
@@ -36,7 +37,19 @@
                             $random_id = rand(time(), 10000000);       //creating random id for user
                             
                             //lets insert all user data inside table
-                            $sql1 = mysqli_query($conn, "INSERT INTO user()");
+                            $sql2 = mysqli_query($conn, "INSERT INTO user(unique_id, fname, lname, email, password, image, status)
+                                                                VALUES({$random_id}, '{$fname}', '{$lname}', '{$email}', '{$password}', '{$new_img_name}', '{$status}')");
+
+                            if($sql2){      //if these data inserted
+                                $sql3 = mysqli_query($conn,"SELECT * FROM user WHERE email = '{$email}'");
+                                if(mysqli_num_rows($sql3 > 0)){
+                                    $row = mysqli_fetch_assoc($sql3);
+                                    $_SESSION['unique_id'] = $row['unique_id'];      //using this session we used user unique id in other php files
+                                    echo "success";
+                                }                                
+                            }else{
+                                echo "Something went wrong!";
+                            }
                         }
                        
 
