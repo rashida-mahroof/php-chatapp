@@ -14,7 +14,7 @@
     <div class="wrapper">
         <section class="form signup">
             <header>Realtime Chat App</header>
-            <form action="#" >
+            <form action="#" autocomplete="off">
                 <div class="error-text"></div>
                     <div class="name_details">
                         <div class="field input">
@@ -43,7 +43,7 @@
                             
                             <input type="submit" value="Continue to Chat">
                         </div>
-                        <div class="link">Already Signed Up <a href="">Login Now</a></div>
+                        <div class="link">Already Signed Up <a href="login.php">Login Now</a></div>
                     
             </form>
         </section>

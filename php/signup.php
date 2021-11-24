@@ -45,7 +45,7 @@ session_start();
                                  
                                 if(mysqli_num_rows($sql3) > 0){
                                     $result = mysqli_fetch_assoc($sql3);
-                                    $_SESSION['unique_id'] = $result['unique_id'];
+                                    $_SESSION['unique_id'] = $result['unique_id'];      //using this session we used user unique id in other php file
                                     echo "success";
                                 }else{
                                     echo "This email address not Exist!";
